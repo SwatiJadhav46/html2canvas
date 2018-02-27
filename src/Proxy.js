@@ -44,7 +44,7 @@ export const Proxy = (src: string, options: Options): Promise<string> => {
         };
 
         xhr.onerror = reject;
-        xhr.open('GET', `${proxy}?url=${encodeURIComponent(src)}&responseType=${responseType}`);
+        xhr.open('GET', `${src}?url=${encodeURIComponent(src)}&responseType=${responseType}`);
 
         if (responseType !== 'text' && xhr instanceof XMLHttpRequest) {
             xhr.responseType = responseType;
